@@ -33,7 +33,7 @@ export function Logo({ variant = "dark", className = "" }: LogoProps) {
             isLight ? "text-gold-400" : "text-slate-500"
           }`}
         >
-          l'allié parfait
+          l allié parfait
         </span>
       </div>
     </a>
