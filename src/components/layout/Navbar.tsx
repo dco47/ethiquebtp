@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
@@ -9,6 +10,8 @@ import { navLinks } from "@/lib/data";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const activeIndex = hoveredIndex;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -34,18 +37,28 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:px-8">
         <Logo />
 
-        <nav className="hidden items-center gap-1 xl:flex">
+        <nav
+          className="hidden items-center gap-1 xl:flex"
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
           {navLinks.map((link, i) => (
             <a
               key={link.href}
               href={link.href}
+              onMouseEnter={() => setHoveredIndex(i)}
+              onFocus={() => setHoveredIndex(i)}
+              onBlur={() => setHoveredIndex(null)}
               className={`relative px-3 py-2 text-sm font-medium transition-colors hover:text-navy-800 ${
-                i === 0 ? "text-navy-800" : "text-slate-600"
+                i === activeIndex ? "text-navy-800" : "text-slate-600"
               }`}
             >
               {link.label}
-              {i === 0 && (
-                <span className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-gold-400" />
+              {i === activeIndex && (
+                <motion.span
+                  layoutId="navbar-active-underline"
+                  transition={{ type: "spring", stiffness: 500, damping: 38 }}
+                  className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-gold-400"
+                />
               )}
             </a>
           ))}

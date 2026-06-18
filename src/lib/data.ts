@@ -100,7 +100,7 @@ export const projects = [
 
 export const stats = [
   { value: "100+", label: "Projets réalisés", icon: "trophy" },
-  { value: "50+", label: "Clients satisfaits", icon: "users" },
+  { value: "100+", label: "Clients satisfaits", icon: "users" },
   { value: "20+", label: "Experts à votre service", icon: "hardhat" },
   { value: "10+", label: "Années d'expérience", icon: "calendar" },
 ] as const;
