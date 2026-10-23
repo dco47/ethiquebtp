@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { navLinks } from "@/lib/data";
 
 export function Navbar() {
@@ -30,8 +31,8 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 shadow-md shadow-navy-900/5 backdrop-blur-md"
-          : "bg-white"
+          ? "bg-white/95 shadow-md shadow-navy-900/5 backdrop-blur-md dark:bg-navy-900/95 dark:shadow-black/30"
+          : "bg-white dark:bg-navy-950"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:px-8">
@@ -48,8 +49,10 @@ export function Navbar() {
               onMouseEnter={() => setHoveredIndex(i)}
               onFocus={() => setHoveredIndex(i)}
               onBlur={() => setHoveredIndex(null)}
-              className={`relative px-3 py-2 text-sm font-medium transition-colors hover:text-navy-800 ${
-                i === activeIndex ? "text-navy-800" : "text-slate-600"
+              className={`relative px-3 py-2 text-sm font-medium transition-colors hover:text-navy-800 dark:hover:text-white ${
+                i === activeIndex
+                  ? "text-navy-800 dark:text-white"
+                  : "text-slate-600 dark:text-slate-300"
               }`}
             >
               {link.label}
@@ -64,31 +67,33 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
-          <Button href="#contact" variant="navy" showArrow>
-            Demander un devis
-          </Button>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <ThemeToggle />
+          <div className="hidden lg:block">
+            <Button href="#contact" variant="navy" showArrow>
+              Demander un devis
+            </Button>
+          </div>
+          <button
+            type="button"
+            onClick={() => setOpen(!open)}
+            className="rounded-lg p-2 text-navy-800 transition-colors hover:bg-slate-100 lg:hidden dark:text-white dark:hover:bg-white/10"
+            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
-
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          className="rounded-lg p-2 text-navy-800 transition-colors hover:bg-slate-100 lg:hidden"
-          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
       </div>
 
       {open && (
-        <div className="border-t border-slate-100 bg-white px-4 py-6 lg:hidden">
+        <div className="border-t border-slate-100 bg-white px-4 py-6 lg:hidden dark:border-white/10 dark:bg-navy-950">
           <nav className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-800"
+                className="rounded-lg px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-800 dark:text-slate-200 dark:hover:bg-white/5 dark:hover:text-white"
               >
                 {link.label}
               </a>

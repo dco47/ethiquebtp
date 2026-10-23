@@ -10,7 +10,7 @@ const iconMap = {
 
 export function FeatureBar() {
   return (
-    <section className="relative z-10 -mt-1 bg-navy-800 shadow-xl">
+    <section className="relative z-10 -mt-1 bg-navy-800 shadow-xl dark:bg-navy-900 dark:border-y dark:border-white/5">
       <div className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-white/10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
         {features.map((feature) => {
           const Icon = iconMap[feature.icon];

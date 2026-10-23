@@ -18,8 +18,8 @@ const variants: Record<ButtonVariant, string> = {
   primary:
     "bg-gold-400 text-navy-900 hover:bg-gold-500 shadow-lg shadow-gold-400/25",
   secondary:
-    "bg-white text-navy-800 border-2 border-navy-800/20 hover:border-navy-800 hover:bg-slate-50",
-  navy: "bg-navy-800 text-white hover:bg-navy-700 shadow-lg shadow-navy-800/20",
+    "bg-white text-navy-800 border-2 border-navy-800/20 hover:border-navy-800 hover:bg-slate-50 dark:bg-navy-800 dark:text-white dark:border-white/20 dark:hover:border-gold-400 dark:hover:bg-navy-700",
+  navy: "bg-navy-800 text-white hover:bg-navy-700 shadow-lg shadow-navy-800/20 dark:bg-white dark:text-navy-900 dark:hover:bg-slate-200 dark:shadow-none",
   outline:
     "bg-transparent text-white border-2 border-white/30 hover:bg-white/10 hover:border-white/50",
 };

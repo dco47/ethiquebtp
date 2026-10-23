@@ -81,8 +81,7 @@ export const projects = [
   {
     title: "Immeuble résidentiel - ZONE 4",
     category: "Construction",
-    image:
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+    image: "/genicivil.jpeg",
   },
   {
     title: "Rénovation maison - Yopougon",
@@ -93,16 +92,15 @@ export const projects = [
   {
     title: "Complexe commercial - Marcory",
     category: "Génie civil",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+    image: "/zone4.jpeg",
   },
 ] as const;
 
 export const stats = [
-  { value: "100+", label: "Projets réalisés", icon: "trophy" },
-  { value: "100+", label: "Clients satisfaits", icon: "users" },
-  { value: "20+", label: "Experts à votre service", icon: "hardhat" },
-  { value: "10+", label: "Années d'expérience", icon: "calendar" },
+  { value: 100, suffix: "+", label: "Projets réalisés", icon: "trophy" },
+  { value: 100, suffix: "+", label: "Clients satisfaits", icon: "users" },
+  { value: 20, suffix: "+", label: "Experts à votre service", icon: "hardhat" },
+  { value: 10, suffix: "+", label: "Années d'expérience", icon: "calendar" },
 ] as const;
 
 export const contactInfo = [
@@ -121,7 +119,7 @@ export const contactInfo = [
   {
     icon: "map",
     label: "Adresse",
-    value: "Abidjan, Côte d'Ivoire - Angré Terminus 81/82",
+    value: "Côte d'Ivoire, Abidjan - Angré Terminus 81/82",
     href: "#",
   },
   {

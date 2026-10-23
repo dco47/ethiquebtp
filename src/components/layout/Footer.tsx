@@ -22,18 +22,6 @@ export function Footer() {
               rénovation et aménagement. Nous bâtissons avec intégrité et
               excellence.
             </p>
-            {/* <div className="mt-6 flex gap-3">
-              {socials.map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-slate-400 transition-colors hover:bg-gold-400 hover:text-navy-900"
-                >
-                  <Icon className="h-5 w-5" />
-                </a>
-              ))}
-            </div> */}
           </div>
 
           <div>

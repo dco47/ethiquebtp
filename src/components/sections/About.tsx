@@ -9,7 +9,7 @@ import { aboutPoints } from "@/lib/data";
 
 export function About() {
   return (
-    <section id="apropos" className="bg-slate-50 py-20 lg:py-28">
+    <section id="apropos" className="bg-slate-50 py-20 lg:py-28 dark:bg-navy-900">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -42,10 +42,10 @@ export function About() {
           transition={{ duration: 0.6 }}
         >
           <SectionLabel>À propos de nous</SectionLabel>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-navy-900 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-navy-900 sm:text-4xl dark:text-white">
             ETHIQUE BTP, bâtir aujourd&apos;hui pour un avenir meilleur.
           </h2>
-          <p className="mt-6 leading-relaxed text-slate-600">
+          <p className="mt-6 leading-relaxed text-slate-600 dark:text-slate-300">
             Forte de plus d&apos;une décennie d&apos;expérience, ETHIQUE BTP est
             votre partenaire de confiance pour tous vos projets de construction,
             rénovation et aménagement. Nous mettons l&apos;intégrité, la qualité
@@ -57,7 +57,7 @@ export function About() {
                 <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-400/20">
                   <Check className="h-4 w-4 text-gold-600" strokeWidth={3} />
                 </span>
-                <span className="text-slate-700">{point}</span>
+                <span className="text-slate-700 dark:text-slate-200">{point}</span>
               </li>
             ))}
           </ul>
